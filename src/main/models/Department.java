@@ -2,20 +2,26 @@ package main.models;
 
 import java.util.HashMap;
 
+import main.exceptions.DepartmentCreationException;
+
 public class Department {
+	public static HashMap<Integer,Department> departments = new HashMap<>();
 
 	private int id;
 	private String name;
 	private HashMap<Integer,Employee> departmentEmployees = new HashMap<>();
 	
-	public Department() {
 	
-	}
-	
-	public Department(int id, String name) {
+	public Department(int id, String name) throws DepartmentCreationException{
 		super();
 		this.id = id;
 		this.name = name;
+		
+		if(!departments.containsKey(id)) {
+				departments.put(id, this);
+		}else { 
+			throw new DepartmentCreationException(id);
+		}
 	}
 
 	public int getId() {
@@ -54,7 +60,6 @@ public class Department {
 	public String toString() {
 		return "Department [id=" + id + ", name=" + name + ", departmentEmployees=" + departmentEmployees + "]";
 	}
-	
-	
-	
+
+			
 }
