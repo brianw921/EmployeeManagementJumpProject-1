@@ -1,0 +1,8 @@
+1::Minister for Magic and Support Staff::
+2::Department of Magical Law Enforcement::
+3::Department of Magical Accidents and Catastrophes::
+4::Department of Regulation and Control of Magical Creaters::
+5::Department of International Magic Cooperation::
+6::Department of Magical Transportation::
+7::Department of Magical Games and Sports::
+8::Department of Mysteries::

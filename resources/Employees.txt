@@ -1,0 +1,19 @@
+1::Minister for Magic and Support Staff
+2::Department of Magical Law Enforcement
+3::Department of Magical Accidents and Catastrophes
+4::Department of Regulation and Control of Magical Creatures
+5::Department of International Magic Cooperation
+6::Department of Magical Transportation
+7::Department of Magical Games and Sports
+8::Department of Mysteries
+***
+1::3::Employee 1
+2::8::Employee 2
+3::2::Employee 3
+4::7::Employee 4
+5::2::Employee 5
+6::2::Employee 6
+7::1::Employee 7
+8::1::Employee 8
+9::2::Employee 9
+10::8::Employee 10
