@@ -26,41 +26,40 @@ public class ManagementView {
 	
 	public int displayOptions(String[] options) {
 		for(int i = 0; i < options.length; i++) {
-			System.out.println((i+1) + ". " + options[i]);
+			io.print((i+1) + ". " + options[i]);
 		}
 		return io.readInt("Please Select An Option", 1, options.length +1);
 	}
 	
 	public int displayAllDepartments(List<Department> departments, String[] options) {
-		System.out.println("-----------------------------------------------------");
-		System.out.println("------------------All Departments--------------------");
-		System.out.println("-----------------------------------------------------");
+		io.print("-----------------------------------------------------");
+		io.print("------------------All Departments--------------------");
+		io.print("-----------------------------------------------------");
 		for(Department department : departments) {
-			System.out.println("Department Id: " +  department.getId()  + " Department Name " + department.getName());
+			io.print("Department Id: " +  department.getId()  + " Department Name " + department.getName());
 		}
 		return displayOptions(options);
 	}
 	
 	
 	public int displayDepartment(Department department, String[] options) {
-		System.out.println(department);
+		io.print("Department " + department.getId() + " || " + department.getName());
 		return displayOptions(options);
 	}
 	
 	public int displayAllEmployees(List<Employee> employees, int averageSalary, String[] options) {
-		System.out.println("-----------------------------------------------------");
-		System.out.println("-------------------All Employees---------------------");
-		System.out.println("-----------------------------------------------------");
+		io.print("-----------------------------------------------------");
+		io.print("-------------------All Employees---------------------");
+		io.print("-----------------------------------------------------");
 		for(Employee employee : employees) {
-			System.out.println("Employee Id: " +  employee.getId()  + " Employee Name " + employee.getName() + " Department id: " + employee.getDepartment().getName());
+			io.print("Employee Id: " +  employee.getId()  + " Employee Name " + employee.getName() + " Department id: " + employee.getDepartment().getName());
 		}
-		System.out.println("Average Salary: $" + averageSalary);
+		io.print("Average Salary: $" + averageSalary);
 		return displayOptions(options);
 	}
 	
 	public int displayEmployee(Employee employee, String[] options) {
-		System.out.println("Employee Id: " +  employee.getId()  + " Employee Name " + employee.getName() + " Department" + employee.getDepartment().getName() );
-		System.out.println(employee);
+		io.print("Employee Id: " +  employee.getId()  + " Employee Name " + employee.getName() + " Department" + employee.getDepartment().getName() );
 		return displayOptions(options);
 	}
 	
@@ -80,6 +79,12 @@ public class ManagementView {
 	public String getStringInputFromUser(String prompt) {
 		return io.readString(prompt);
 	}
+	
+	public void goodbye(String prompt) {
+		io.print("-----------------------------------------------------");
+		io.print("                   " + prompt);
+		io.print("---------------------Goodbye-------------------------");
+		io.print("-----------------------------------------------------");	}
 	
 	
 	

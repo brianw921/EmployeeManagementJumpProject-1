@@ -33,9 +33,8 @@ public class ManagementController {
 				displayAllEmployees();
 				break;
 			case 3:
-				System.out.println("Goodbye");
-				service.saveData();
-				System.exit(0);
+				exitManagement();
+				break;
 		}
 	}
 	
@@ -188,6 +187,23 @@ public class ManagementController {
 			break;
 		}
 		
+	}
+	
+	public void exitManagement() {
+		
+		switch(view.getConfirmationFromUser("Would You Like To Save Changes? Y/N")) {
+		
+		case "y":
+			service.saveData();
+			view.goodbye("Data Saved");
+			System.exit(0);
+			break;
+			
+		case "n":
+			view.goodbye("Exiting Without Save");
+			System.exit(0);
+			break;
+		}
 	}
 	
 }
