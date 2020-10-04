@@ -5,8 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
-import Dao.EmployeeManagementDaoImpl;
 import main.controllers.ManagementController;
+import main.dao.EmployeeManagementDaoImpl;
 import main.exceptions.DepartmentCreationException;
 import main.exceptions.EmployeeCreationException;
 import main.models.Department;

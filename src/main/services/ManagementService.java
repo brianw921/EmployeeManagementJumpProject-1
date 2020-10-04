@@ -2,8 +2,8 @@ package main.services;
 
 import java.util.List;
 
-import Dao.EmployeeManagementDao;
-import Dao.EmployeeManagementDaoImpl;
+import main.dao.EmployeeManagementDao;
+import main.dao.EmployeeManagementDaoImpl;
 import main.exceptions.DepartmentCreationException;
 import main.exceptions.EmployeeCreationException;
 import main.models.Department;

@@ -1,4 +1,4 @@
-package Dao;
+package main.dao;
 
 import java.util.List;
 import java.util.TreeMap;
