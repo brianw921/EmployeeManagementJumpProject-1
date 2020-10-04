@@ -91,11 +91,11 @@ public class ManagementController {
 				updateEmployeeName(employee);
 				break;
 			case 2:
-//				updateDepartment(employee);
+				updateEmployeeDepartment(employee);
 				break;
 			case 3:
 				deleteEmployee(employee.getId());
-//				displayAllEmployees();
+				displayAllEmployees();
 				break;
 			case 4:
 				displayMainMenu();
@@ -161,14 +161,14 @@ public class ManagementController {
 //		view.displayAllDepartments(departments, options)
 		int departmentId = view.getIdFromUser("Enter Department Id: ");
 		String title = view.getStringInputFromUser("Enter Employee's Title: " );
-		int salary = view.getIdFromUser("Enter Employee's Salary");
+		int salary = view.getIdFromUser("Enter Employee's Salary: ");
 		System.out.println("New Employee Info");
 		System.out.println("Name: " + name);
 		System.out.println("Department : " + service.getDepartment(departmentId).getName());
 		System.out.println("Title : " + title);
 		System.out.println("Salary :  " + salary);
 		 
-		switch(view.getConfirmationFromUser("Is This information correct? Y/N")) {
+		switch(view.getConfirmationFromUser("Is This information correct? Y/N: ")) {
 		
 		case "y":
 			try {
@@ -191,7 +191,7 @@ public class ManagementController {
 	
 	public void exitManagement() {
 		
-		switch(view.getConfirmationFromUser("Would You Like To Save Changes? Y/N")) {
+		switch(view.getConfirmationFromUser("Would You Like To Save Changes? Y/N: ")) {
 		
 		case "y":
 			service.saveData();

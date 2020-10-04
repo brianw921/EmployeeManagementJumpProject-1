@@ -24,10 +24,18 @@ public class EmployeeManagementDaoImpl implements EmployeeManagementDao{
 	
 	private TreeMap<Integer, Employee> employees = new TreeMap<>();
 	
-	private String[] ministryDepartments = {"Minister for Magic and Support Staff", "Department of Magical Law Enforcement",
-			"Department of Magical Accidents and Catastrophes", "Department of Regulation and Control of Magical Creatures",
-			"Department of International Magic Cooperation", "Department of Magical Transportation",
-			"Department of Magical Games and Sports", "Department of Mysteries"};
+	private String[] ministryDepartments = {"Minister for Magic and Support Staff", "Magical Law Enforcement",
+			"Magical Accidents and Catastrophes", "Regulation and Control of Magical Creatures",
+			"International Magic Cooperation", "Magical Transportation",
+			"Magical Games and Sports", "Mysteries"};
+	
+	
+	private String[] ministryNames = {"Alastor Gumboil", "Albert Boot", "Amos Diggory",
+										"Archer Evermonde", "Royden Poke", "Newt Scamander","Ignatius Tuft",
+										"Dolores Umbridge", "Barty Crouch Sr.", "Eldritch Diggory"};
+	
+	private String[] titles = {"Auror", "Accountant","Calamity Investigator", "Hit Wizard", "Research Assistant"};
+	
 	
 	@Override
 	public List<Department> getAllDepartments() {
@@ -155,9 +163,10 @@ public class EmployeeManagementDaoImpl implements EmployeeManagementDao{
 	@Override
 	public void setEmployees() throws EmployeeCreationException {
 		Random rand = new Random();
-		for(int i = 1; i < 11; i++) {
-			employees.put(i, new Employee(rand.nextInt(4),"Employee " + i, departments.get(rand.nextInt(departments.size()) + 1), "temptitle", 50000));
-			setDepartmentEmployee(employees.get(i), employees.get(i).getDepartmentId());
+		for(int i = 0; i < ministryNames.length; i++) {
+			employees.put(i + 1, new Employee(rand.nextInt(4),ministryNames[i], departments.get(rand.nextInt(departments.size()) + 1),
+					titles[rand.nextInt(titles.length)], rand.nextInt(20000) + 50000));
+			setDepartmentEmployee(employees.get(i+1), employees.get(i+1).getDepartmentId());
 		}		
 	}
 

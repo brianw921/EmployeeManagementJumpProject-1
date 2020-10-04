@@ -42,7 +42,6 @@ public class ManagementService {
 		return dao.updateEmployeeName(employeeId, name);
 	}
 	
-	
 	public Employee updateEmployeeDepartment(int employeeId, int departmentId) {
 		return dao.updateEmployeeDepartment(employeeId, departmentId);
 	}

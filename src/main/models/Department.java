@@ -6,7 +6,6 @@ import main.exceptions.DepartmentCreationException;
 
 public class Department {
 	public static HashMap<Integer,Department> departments = new HashMap<>();
-
 	private int id;
 	private String name;
 	private HashMap<Integer,Employee> departmentEmployees = new HashMap<>();
