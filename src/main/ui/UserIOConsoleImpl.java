@@ -3,6 +3,8 @@ package main.ui;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import main.exceptions.InputOutOfRangeException;
+
 public class UserIOConsoleImpl implements UserIO {
 	Scanner sc = new Scanner(System.in);
 	
@@ -21,7 +23,7 @@ public class UserIOConsoleImpl implements UserIO {
 				
 			} catch (InputMismatchException e) {
 				sc.nextLine();
-				System.out.println("Please insert a proper value");
+				System.out.println("Please insert an integer value");
 			}
 			
 		}
@@ -36,11 +38,15 @@ public class UserIOConsoleImpl implements UserIO {
 				userInput = sc.nextInt();
 				if(userInput >= min &&  userInput <= max) {
 					return userInput;
+				}else {
+					throw new InputOutOfRangeException(min, max);
 				}
 				
 			} catch (InputMismatchException e) {
 				sc.nextLine();
-				System.out.println("Please insert a proper value");
+				System.out.println("Please insert an integer value");
+			}catch(InputOutOfRangeException e) {
+				System.out.println(e.getMessage());
 			}
 			
 		}
@@ -48,14 +54,17 @@ public class UserIOConsoleImpl implements UserIO {
 
 	@Override
 	public String readString(String prompt) {
+		String userInput;
 		while (true) {
 			
 			try {
-				System.out.println(prompt);
-				return sc.next();
+				sc.nextLine();
+				System.out.print(prompt);
+				userInput = sc.nextLine();
+				return userInput;
 				
 			} catch (InputMismatchException e) {
-				sc.nextLine();
+//				sc.nextLine();
 				System.out.println("Please insert a proper value");
 			}
 			

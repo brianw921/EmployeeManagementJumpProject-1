@@ -30,7 +30,7 @@ public class ManagementView {
 			io.print((i+1) + ". " + options[i]);
 		}
 		io.print("------------------------------------------------------------------------------");
-		return io.readInt("Please Select An Option: ", 1, options.length +1);
+		return io.readInt("Please Select An Option: ", 1, options.length);
 	}
 	
 	public int displayAllDepartments(List<Department> departments, String[] options) {
