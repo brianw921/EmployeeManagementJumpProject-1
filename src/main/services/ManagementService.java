@@ -74,6 +74,7 @@ public class ManagementService {
 	
 	public void saveData() {
 		dao.writeDataToTxtFile();
+		dao.writeDataToExcel();
 	}
 	
 	public void readDataFromTxt() throws NumberFormatException, DepartmentCreationException, EmployeeCreationException {

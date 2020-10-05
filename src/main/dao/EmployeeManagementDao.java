@@ -29,7 +29,9 @@ public interface EmployeeManagementDao  {
 	void setDepartmentEmployee(Employee employee, int departmentId);
 	void setEmployees() throws EmployeeCreationException;
 	void readDataFromTxtFile() throws NumberFormatException, DepartmentCreationException, EmployeeCreationException;
+	void readDataFromExcel();
 	void writeDataToTxtFile();
+	void writeDataToExcel();
 	void seedData() throws EmployeeCreationException, DepartmentCreationException;
 
 }

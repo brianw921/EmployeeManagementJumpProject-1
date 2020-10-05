@@ -11,10 +11,13 @@ import java.util.List;
 import java.util.Random;
 import java.util.TreeMap;
 
+import jxl.write.WriteException;
 import main.exceptions.DepartmentCreationException;
 import main.exceptions.EmployeeCreationException;
 import main.models.Department;
 import main.models.Employee;
+import main.readWriteExcel.ReadData;
+import main.readWriteExcel.WriteData;
 
 public class EmployeeManagementDaoImpl implements EmployeeManagementDao{
 
@@ -116,6 +119,20 @@ public class EmployeeManagementDaoImpl implements EmployeeManagementDao{
 		}
 	}
 	
+	public void writeDataToExcel(){
+				
+		try {
+			WriteData.createFile(getAllEmployees(), getAllDepartments());
+		} catch (WriteException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+	}
+	
 	public void readDataFromTxtFile() throws NumberFormatException, DepartmentCreationException, EmployeeCreationException {
 		File file = new File("resources/Employees.txt");
 		
@@ -173,6 +190,12 @@ public class EmployeeManagementDaoImpl implements EmployeeManagementDao{
 	@Override
 	public void setDepartmentEmployee(Employee employee, int departmentId) {
 		departments.get(departmentId).addDepartmentEmployee(employee);		
+	}
+
+	@Override
+	public void readDataFromExcel() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
